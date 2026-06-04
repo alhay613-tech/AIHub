@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Futuristic AI background with glowing circuits",
+      "imageUrl": "https://picsum.photos/seed/ai-hub-hero/1200/600",
+      "imageHint": "artificial intelligence circuits"
+    },
+    {
+      "id": "tool-writing",
+      "description": "Modern writing assistant tool",
+      "imageUrl": "https://picsum.photos/seed/tool-1/400/300",
+      "imageHint": "writing notebook assistant"
+    },
+    {
+      "id": "tool-image",
+      "description": "AI image generator canvas",
+      "imageUrl": "https://picsum.photos/seed/tool-2/400/300",
+      "imageHint": "digital art canvas"
+    },
+    {
+      "id": "tool-coding",
+      "description": "Code editor with AI suggestions",
+      "imageUrl": "https://picsum.photos/seed/tool-3/400/300",
+      "imageHint": "coding computer screen"
+    }
+  ]
 }
