@@ -8,10 +8,25 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { Mail, Lock, LogIn } from "lucide-react";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "@/lib/firebase";
+import { useAuth } from "@/hooks/use-auth";
 
 export default function LoginPage() {
   const { t } = useI18n();
   const [isLogin, setIsLogin] = useState(true);
+const { user } = useAuth();
+ 
+const handleGoogleLogin = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    console.log(result.user);
+    window.location.href = "/admin";
+  } catch (error) {
+    console.error(error);
+    alert("Login failed");
+  }
+};
 
   return (
     <div className="container mx-auto px-4 py-32 flex justify-center items-center">
@@ -23,7 +38,11 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Button variant="outline" className="w-full h-12 border-secondary bg-background/50 flex items-center justify-center gap-3">
+          <Button
+  onClick={handleGoogleLogin}
+  variant="outline"
+  className="w-full h-12 border-secondary bg-background/50 flex items-center justify-center gap-3"
+>
             <svg className="h-5 w-5" viewBox="0 0 24 24">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
               <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
