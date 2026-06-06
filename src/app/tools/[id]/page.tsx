@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, ExternalLink, MessageSquare, Share2, Bookmark } from "lucide-react";
+import { Star, ExternalLink, MessageSquare, Share2, Bookmark, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import { summarizeToolReviews } from "@/ai/flows/summarize-tool-reviews";
 
